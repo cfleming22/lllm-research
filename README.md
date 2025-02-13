@@ -1,18 +1,110 @@
-## LLM-Research
-Feb 12, 2025 | https://github.com/cfleming22/lllm-research/ | #r/github/llm-research 
+# The Hugging Face Blog Repository 🤗
+This is the official repository of the [Hugging Face Blog](https://hf.co/blog). 
 
-----
+**If you are an external contributor**: If your blog post is not a collaboration post with Hugging Face, please consider creating a [community blog](https://huggingface.co/blog-explorers) instead. Community blog posts appear on our blogs main page just like the blogs in this repository.
 
-|   **Title**  |   **Description**  |   **Link**  |  
-|---|---|---|
-|   **LLM Visualization by Brendan Bycroft**  |   An interactive 3D visualization providing an in-depth walkthrough of a GPT-style large language model, illustrating the model’s architecture and operations.  |   [bbycroft.net/llm](https://bbycroft.net/llm)  |  
-|   **Reddit Discussion on Deep Research**  |   A Reddit user shares their experience with OpenAI’s Deep Research tool, highlighting its efficiency in conducting comprehensive research and comparing it to other tools.  |   [reddit.com](https://www.reddit.com/r/ChatGPTPro/comments/1iis4wy/comment/mbcuzeb/?context=3&amp;share_id=rsMVkSMdPcjj5R4A2YCni&amp;utm_content=1&amp;utm_medium=ios_app&amp;utm_name=ioscss&amp;utm_source=share&amp;utm_term=1&amp;rdt=56622)  |  
-|   **Hugging Face’s Open Deep-Research**  |   An open-source alternative to OpenAI’s Deep Research, developed by Hugging Face, which autonomously browses the web, summarizes content, and answers questions based on gathered information.  |   [huggingface.co/blog/open-deep-research](https://huggingface.co/blog/open-deep-research)  |  
-|   **Lil’Log by Lilian Weng**  |   A blog documenting learning notes on various machine learning topics since 2017, covering subjects like reinforcement learning, diffusion models, and adversarial attacks on LLMs.  |   [lilianweng.github.io](https://lilianweng.github.io/)  |  
-|   **MLU-Explain by Amazon’s Machine Learning University**  |   Offers visual essays that elucidate core machine learning concepts in an engaging and accessible manner, covering topics such as neural networks, reinforcement learning, and the bias-variance tradeoff.  |   [mlu-explain.github.io](https://mlu-explain.github.io/)  |  
-|   **Deep Dive into LLMs like ChatGPT by Andrej Karpathy**  |   A comprehensive video where Andrej Karpathy delves into the architecture and training processes of large language models similar to ChatGPT, discussing fine-tuning, prompt engineering, and methods to mitigate hallucinations in model outputs.  |   [youtube.com](https://www.youtube.com/watch?v=7xTGNNLPyMI)  |  
-|   **Deedy’s Post on Artifact**  |   A recent post by Deedy discussing insights or developments related to Artifact.  |   [x.com](https://x.com/deedydas/status/1888995108487668048)  |  
-|   **Dmitry Shapiro’s Introduction to ‘Do Your Research’**  |   Dmitry Shapiro introduces “Do Your Research,” a new AI-powered tool designed to streamline and enhance the research process.  |   [twitter.com](https://twitter.com/dmitry/status/1888653190603911333)  |  
-|   **Aymeric Roucher’s Blog Post**  |   Aymeric Roucher shares a blog post discussing recent developments or insights in the field of AI and machine learning.  |   [x.com](https://x.com/AymericRoucher/status/1886847152216768627)  |  
-|   **Open-Source DeepResearch Code Release**  |   Announcement of the code release for Open-Source DeepResearch, providing tools and frameworks for advanced research applications.  |   [x.com](https://x.com/AymericRoucher/status/1886847152216768627)  |  
-|   **Additional Resource by Dmitry Shapiro**  |   Dmitry Shapiro shares another resource or insight related to AI research and tools.  |   [x.com](https://x.com/dmitry/status/1884805127309308026)  |  
+## How to write an article? 📝
+1️⃣ Create a branch `YourName/Title`
+
+2️⃣ Create a md (markdown) file, **use a short file name**.
+For instance, if your title is "Introduction to Deep Reinforcement Learning", the md file name could be `intro-rl.md`. This is important because the **file name will be the blogpost's URL**.
+
+3️⃣ Create a new folder in `assets`. Use the same name as the name of the md file. Optionally you may add a numerical prefix to that folder, using the number that hasn't been used yet. But this is no longer required. i.e. the asset folder in this example could be `123_intro-rl` or `intro-rl`. This folder will contain **your thumbnail only**. The folder number is mostly for (rough) ordering purposes, so it's no big deal if two concurrent articles use the same number.
+
+For the rest of your files, create a mirrored folder in the HuggingFace Documentation Images [repo](https://huggingface.co/datasets/huggingface/documentation-images/tree/main/blog). This is to reduce bloat in the GitHub base repo when cloning and pulling.
+
+🖼️: In terms of images, **try to have small files** to avoid having a slow loading user experience:
+- Use compressed images, you can use this website: https://tinypng.com or https://www.iloveimg.com/compress-image
+
+4️⃣ Copy and paste this to your md file and change the elements
+- title
+- thumbnail
+- authors
+```
+---
+title: "PUT YOUR TITLE HERE" 
+thumbnail: /blog/assets/101_decision-transformers-train/thumbnail.gif
+authors:
+- user: your_hf_user
+- user: your_coauthor
+---
+
+# Train your first Decision Transformer
+
+Your content here [...]
+```
+
+When published, the Hub will insert the following UI elements right after the blogpost's main header (i.e. the line that starts with a single `#`, aka. the `<h1>`):
+
+- "Published on [date]"
+- "Update on GitHub" button
+- avatars of the authors that were listed in authors.
+
+5️⃣ Then, you can add your content. It's markdown system so if you wrote your text on notion just control shift v to copy/paste as markdown.
+
+6️⃣ Modify `_blog.yml` to add your blogpost.
+
+7️⃣ When your article is ready, **open a pull request**.
+
+8️⃣ The article will be **published automatically when you merge your pull request**.
+
+## How to get a nice responsive thumbnail?
+1️⃣ Create a `1300x650` image 
+
+2️⃣ Use [this template](https://github.com/huggingface/blog/blob/main/assets/thumbnail-template.svg) and fill the content part.
+
+➡️ Or select a background you like and follow the instructions in [this Figma template](https://www.figma.com/file/sXrf9VtkkbWI7kCIesMkDY/HF-Blog-Template?node-id=351%3A39).
+
+
+## Using LaTeX
+
+Just add:
+
+```
+\\(your_latex_here\\)
+```
+
+For instance:
+
+
+``` \\( Q(S_t, A_t) \\) ``` ➡️ $Q(S_t, A_t)$
+
+## How to Caption Figures
+
+A couple of alternatives:
+
+- Use a Markdown table [like here](https://github.com/huggingface/blog/blob/fd611f6200391b865641c4e7a38e1ea47ec4bc6c/pref-tuning.md?plain=1#L31).
+- Use HTML, [like here](https://github.com/huggingface/blog/blob/0e6ebe5ca43d6408c20eddab1f5f3205d680f3aa/watermarking.md?plain=1#L70-L73).
+
+## How to Use Highlight Boxes
+
+See an example [in this PR](https://github.com/huggingface/blog/pull/1180). This is to be used sparingly :)
+
+## Embed a Space
+
+Just add:
+
+```
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.36.1/gradio.js"
+></script>
+
+<gradio-app theme_mode="light" space="derek-thomas/hugging-face-blog-assistant"></gradio-app>
+```
+
+Code: [leaderboard-bigcodebench.md](leaderboard-bigcodebench.md)
+[Blog Example](https://huggingface.co/blog/leaderboard-bigcodebench#how-well-do-llms-perform-on-bigcodebench-%F0%9F%93%8A)
+
+## More Assistance
+
+You can use the [community blog editor](https://huggingface.co/new-blog) which has a preview function.
+
+Or check out this [assistant space](https://huggingface.co/spaces/derek-thomas/hugging-face-blog-assistant) 
+to help with rendering some tricky markdown blocks like:
+- Inserting caption figures with image tables
+- Tip formatting
+- Inserting clickable references
+ 
+Do give it a like if it was helpful.
+
